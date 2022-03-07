@@ -22,6 +22,7 @@ fun searchFoo() {
     if (tempList.size == 0) println("Not Found") else {
         println("People found:")
         println(tempList.joinToString("\n"))
+        println("")
     }
     menu()
 }
@@ -34,7 +35,10 @@ fun menu() {
     when(readln()) {
         "1" -> searchFoo()
         "2" -> printAll()
-        "0" -> exitProcess(0)
+        "0" -> {
+            println("Bye")
+            exitProcess(0)
+        }
         else -> {
            println("Incorrect option! Try again.")
             menu()
@@ -49,6 +53,9 @@ fun printAll() {
     menu()
 }
 
+fun inverted (){
+
+}
 /*
 
  */
