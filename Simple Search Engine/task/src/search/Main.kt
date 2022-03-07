@@ -5,16 +5,14 @@ import kotlin.system.exitProcess
 
 val list = mutableListOf<String>()
 
-fun main() {
-
-    println("Enter the number of people:")
-   val amount = readln().toInt()
-    println("Enter all people:")
-    repeat(amount){ list.add(readln())}
-    println("")
+fun main(args : Array<String>) {
+    if (args.contains("--data")){
+        if (File(args[1]).exists())
+        File(args[1]).forEachLine { list.add(it) }
+    } else println("zalupu tebe")
     menu()
-
 }
+
 fun searchFoo() {
     println("Enter a name or email ")
     val str = readln()
